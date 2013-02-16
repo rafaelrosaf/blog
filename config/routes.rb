@@ -1,5 +1,10 @@
 Blog::Application.routes.draw do
   root to: "pages#index"
+
+  resources :posts do
+    resources :comments
+  end
+
   get "pages/index"
 
   # The priority is based upon order of creation:
